@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="分治,nth_element," />
+  <meta name="keywords" content="auto,分治,零点判断," />
 
 
 
@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
+<meta name="description" content="The QuestionGiven a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+The">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kth Largest Element in an Array">
-<meta property="og:url" content="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/index.html">
+<meta property="og:title" content="Different Ways to Add Parentheses">
+<meta property="og:url" content="http://yoursite.com/2017/03/07/Different Ways to Add Parentheses/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
-<meta property="og:updated_time" content="2017-03-02T16:49:14.716Z">
+<meta property="og:description" content="The QuestionGiven a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+The">
+<meta property="og:updated_time" content="2017-03-09T05:36:28.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kth Largest Element in an Array">
-<meta name="twitter:description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
+<meta name="twitter:title" content="Different Ways to Add Parentheses">
+<meta name="twitter:description" content="The QuestionGiven a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
+The">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/07/Different Ways to Add Parentheses/"/>
 
 
 
 
 
-  <title> Kth Largest Element in an Array | 海天中的一颗小游草 </title>
+  <title> Different Ways to Add Parentheses | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/Different Ways to Add Parentheses/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +293,7 @@
             
             
               
-                Kth Largest Element in an Array
+                Different Ways to Add Parentheses
               
             
           </h1>
@@ -305,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T14:20:00+08:00">
-                2017-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T18:00:00+08:00">
+                2017-03-07
               </time>
             
 
@@ -363,18 +366,30 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.<br><a id="more"></a></p>
-<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><p>Given [3,2,1,5,6,4] and k = 2, return 5.</p>
-<h2 id="The-Answer"><a href="#The-Answer" class="headerlink" title="The Answer"></a>The Answer</h2><h3 id="库函数nth-element（）"><a href="#库函数nth-element（）" class="headerlink" title="库函数nth_element（）"></a>库函数nth_element（）</h3><p>正如上一节<strong>Majority Element</strong>所言的：<br><code>&lt;algorithm&gt;
-template &lt;class RandomAccessIterator&gt;
-void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last );</code><br>简单的说nth_element算法仅排序第nth个元素（从0开始的索引），如iarray [first,last) 元素区间排序后  iarray[nth] 就是第nth大的元素（从0开始），要注意的是[first,nth) [nth,last)内 的大小循序还不一定<br>只能确定iarray[nth]是第nth大的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">For example,</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</div><div class="line">        nth_element(nums.begin(),nums.begin()+(nums.size()-k),nums.end());</div><div class="line">        return nums[nums.size()-k];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><p>思路很简单，选取一个数，作为vector分类的参考，比这个数大的放在一边，其他的放在一边。当大的那一边的个数多余k的时候，也就是所要求得值就在这边，小于k的时候就出现在右边。<br>需要注意一下两点：</p>
+        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.</p>
+<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><p><strong>Input: “2-1-1”。Output: [0, 2]</strong></p>
 <ul>
-<li>当出现特色情况，vector的数字全是一样，就会出现每次迭代的数字都出现在右边，也就是迭代根本没有意义了。可以直接退出。</li>
-<li>参考值得选取，如何合理的分类，最好的情况就是每一次两个分的的数据个数都是n/2，所以选取数据的最大值和最小值的平均值作为参考条件。</li>
+<li>((2-1)-1) = 0</li>
+<li>(2-(1-1)) = 2</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</div><div class="line">        int length=nums.size();</div><div class="line">    	if(length==1) return nums[0];//递归介绍条件</div><div class="line">    	</div><div class="line">    	int min,max;//vector地最大值和最小值</div><div class="line">        min=max=nums[0];</div><div class="line">        for(int i=0;i&lt;nums.size();++i)&#123;</div><div class="line">            if(nums[i]&gt;max) max=nums[i];</div><div class="line">            if(nums[i]&lt;min) min=nums[i];</div><div class="line">        &#125;</div><div class="line">        double mid=(min+max)/2.0;//使用最大值和最小值的平均值作为判断条件</div><div class="line">    	</div><div class="line">        vector&lt;int&gt;leftnums,rightnums;//比mid大的放在左边，其他的放在右边</div><div class="line">        for(int i=0;i&lt;length;++i)&#123;</div><div class="line">            if(nums[i]&gt;mid)</div><div class="line">                leftnums.push_back(nums[i]);</div><div class="line">            else</div><div class="line">            	rightnums.push_back(nums[i]);</div><div class="line">        &#125;</div><div class="line">        if(leftnums.size()&gt;=k)//左边的个数多余K的时候，说明要取的值必定在左边</div><div class="line">        	return findKthLargest(leftnums,k);</div><div class="line">        else if(rightnums.size()==length)//这是个特色情况，当vector的数据都是一样的时候，就会出现每一次的递归都会出现在右边的现象，所以这种情况下就直接可以退出，因为每个值都一样，就可以返回第一个值就是所求的值</div><div class="line">            return nums[0];</div><div class="line">        else</div><div class="line">        	return findKthLargest(rightnums,k-leftnums.size());//当左边的vector小于k的时候必定出现在右边的vector</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>~Thanks~<br>By 海天游草~~~2017.3.1</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p><strong>Input: “2<em>3-4</em>5”。Output: [-34, -14, -10, -10, 10]</strong></p>
+<ul>
+<li>(2<em>(3-(4</em>5))) = -34</li>
+<li>((2<em>3)-(4</em>5)) = -14</li>
+<li>((2<em>(3-4))</em>5) = -10</li>
+<li>(2<em>((3-4)</em>5)) = -10</li>
+<li>(((2<em>3)-4)</em>5) = 10</li>
+</ul>
+<h2 id="The-Answer"><a href="#The-Answer" class="headerlink" title="The Answer"></a>The Answer</h2><p>对于本题，思路还是比较简单的，由于string之中只有两种类型的字符：数字和操作符。因此对于string的转化为数学表达式的计算结果而言，就是一个操作符的排列问题。具体可以如下操作：</p>
+<ul>
+<li>顺序遍历string直到遇到一个操作符；</li>
+<li>以操作符为区分，操作符左侧的为一个排列问题，位于右侧的是一个排列问题；</li>
+<li>对于左右两侧的的排列问题，就是一个递归的操作，两侧的取值分别存储在两个vector之中；</li>
+<li>对于当前的特定的操作符，string的计算结果就是左右两个vector内存储的数值的组合问题。</li>
+</ul>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; diffWaysToCompute(<span class="built_in">string</span> input) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;result;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;input.length();++i)&#123;</div><div class="line">            <span class="keyword">char</span> at=input[i];</div><div class="line">            <span class="keyword">if</span>(at==<span class="string">'+'</span>||at==<span class="string">'*'</span>||at==<span class="string">'-'</span>)&#123;</div><div class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;l1=diffWaysToCompute(input.substr(<span class="number">0</span>,i));</div><div class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;r1=diffWaysToCompute(input.substr(i+<span class="number">1</span>));</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;l1.size();++m)&#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> n=<span class="number">0</span>;n&lt;r1.size();++n)&#123;</div><div class="line">                        <span class="keyword">if</span>(at==<span class="string">'+'</span>) result.push_back(l1[m]+r1[n]);</div><div class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(at==<span class="string">'-'</span>) result.push_back(l1[m]-r1[n]);</div><div class="line">                        <span class="keyword">else</span> result.push_back(l1[m]*r1[n]);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(result.empty())</div><div class="line">            result.push_back(atoi(input.c_str()));</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>对于下面的for循环，还可以改为如下<strong>for(auto a : vector<int> b)</int></strong>的形式方便快捷。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> a:l1)&#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">auto</span> b:r1)&#123;</div><div class="line">                        <span class="keyword">if</span>(at==<span class="string">'+'</span>) result.push_back(a+b);</div><div class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(at==<span class="string">'-'</span>) result.push_back(a-b);</div><div class="line">                        <span class="keyword">else</span> result.push_back(a*b);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div></pre></td></tr></table></figure></p>
+<p>~Thanks~<br>By 海天游草~~~2017.3.7</p>
 
       
     </div>
@@ -398,9 +413,11 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
       
         <div class="post-tags">
           
+            <a href="/tags/auto/" rel="tag"># auto</a>
+          
             <a href="/tags/分治/" rel="tag"># 分治</a>
           
-            <a href="/tags/nth-element/" rel="tag"># nth_element</a>
+            <a href="/tags/零点判断/" rel="tag"># 零点判断</a>
           
         </div>
       
@@ -413,8 +430,8 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/27/Median of Two Sorted Arrays/" rel="next" title="Median of Two Sorted Arrays">
-                <i class="fa fa-chevron-left"></i> Median of Two Sorted Arrays
+              <a href="/2017/03/05/Merge k Sorted Listsmbers/" rel="next" title="Merge k Sorted Listsmbers">
+                <i class="fa fa-chevron-left"></i> Merge k Sorted Listsmbers
               </a>
             
           </div>
@@ -422,10 +439,6 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/03/Majority Element/" rel="prev" title="Majority Element">
-                Majority Element <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -550,7 +563,7 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Answer"><span class="nav-number">3.</span> <span class="nav-text">The Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#库函数nth-element（）"><span class="nav-number">3.1.</span> <span class="nav-text">库函数nth_element（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法"><span class="nav-number">3.2.</span> <span class="nav-text">分治算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-number">2.1.</span> <span class="nav-text">Example 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">2.2.</span> <span class="nav-text">Example 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Answer"><span class="nav-number">3.</span> <span class="nav-text">The Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下"><span class="nav-number">3.1.</span> <span class="nav-text">代码如下</span></a></li></ol></li></ol></div>
             
 
           </div>

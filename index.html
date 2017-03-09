@@ -270,6 +270,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/Different Ways to Add Parentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海天游草">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海天中的一颗小游草">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/07/Different Ways to Add Parentheses/" itemprop="url">
+                  Different Ways to Add Parentheses
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T18:00:00+08:00">
+                2017-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法设计/" itemprop="url" rel="index">
+                    <span itemprop="name">算法设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.</p>
+<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><p><strong>Input: “2-1-1”。Output: [0, 2]</strong></p>
+<ul>
+<li>((2-1)-1) = 0</li>
+<li>(2-(1-1)) = 2</li>
+</ul>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p><strong>Input: “2<em>3-4</em>5”。Output: [-34, -14, -10, -10, 10]</strong></p>
+<ul>
+<li>(2<em>(3-(4</em>5))) = -34</li>
+<li>((2<em>3)-(4</em>5)) = -14</li>
+<li>((2<em>(3-4))</em>5) = -10</li>
+<li>(2<em>((3-4)</em>5)) = -10</li>
+<li>(((2<em>3)-4)</em>5) = 10</li>
+</ul>
+<h2 id="The-Answer"><a href="#The-Answer" class="headerlink" title="The Answer"></a>The Answer</h2><p>对于本题，思路还是比较简单的，由于string之中只有两种类型的字符：数字和操作符。因此对于string的转化为数学表达式的计算结果而言，就是一个操作符的排列问题。具体可以如下操作：</p>
+<ul>
+<li>顺序遍历string直到遇到一个操作符；</li>
+<li>以操作符为区分，操作符左侧的为一个排列问题，位于右侧的是一个排列问题；</li>
+<li>对于左右两侧的的排列问题，就是一个递归的操作，两侧的取值分别存储在两个vector之中；</li>
+<li>对于当前的特定的操作符，string的计算结果就是左右两个vector内存储的数值的组合问题。</li>
+</ul>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; diffWaysToCompute(<span class="built_in">string</span> input) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;result;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;input.length();++i)&#123;</div><div class="line">            <span class="keyword">char</span> at=input[i];</div><div class="line">            <span class="keyword">if</span>(at==<span class="string">'+'</span>||at==<span class="string">'*'</span>||at==<span class="string">'-'</span>)&#123;</div><div class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;l1=diffWaysToCompute(input.substr(<span class="number">0</span>,i));</div><div class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;r1=diffWaysToCompute(input.substr(i+<span class="number">1</span>));</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;l1.size();++m)&#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> n=<span class="number">0</span>;n&lt;r1.size();++n)&#123;</div><div class="line">                        <span class="keyword">if</span>(at==<span class="string">'+'</span>) result.push_back(l1[m]+r1[n]);</div><div class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(at==<span class="string">'-'</span>) result.push_back(l1[m]-r1[n]);</div><div class="line">                        <span class="keyword">else</span> result.push_back(l1[m]*r1[n]);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(result.empty())</div><div class="line">            result.push_back(atoi(input.c_str()));</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>对于下面的for循环，还可以改为如下<strong>for(auto a : vector<int> b)</int></strong>的形式方便快捷。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> a:l1)&#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">auto</span> b:r1)&#123;</div><div class="line">                        <span class="keyword">if</span>(at==<span class="string">'+'</span>) result.push_back(a+b);</div><div class="line">                        <span class="keyword">else</span> <span class="keyword">if</span>(at==<span class="string">'-'</span>) result.push_back(a-b);</div><div class="line">                        <span class="keyword">else</span> result.push_back(a*b);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div></pre></td></tr></table></figure></p>
+<p>~Thanks~<br>By 海天游草~~~2017.3.7</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/05/Merge k Sorted Listsmbers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -837,150 +1000,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="海天游草">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="海天中的一颗小游草">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/01/Kth Largest Element in an Array/" itemprop="url">
-                  Kth Largest Element in an Array
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T14:20:00+08:00">
-                2017-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法设计/" itemprop="url" rel="index">
-                    <span itemprop="name">算法设计</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/01/Kth Largest Element in an Array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1030,7 +1049,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1048,7 +1067,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
