@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="nth_element,分治," />
+  <meta name="keywords" content="void,按引用传递,return," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
+<meta name="description" content="The QuestionGiven a binary tree, return all root-to-leaf paths.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kth Largest Element in an Array">
-<meta property="og:url" content="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/index.html">
+<meta property="og:title" content="Binary Tree Paths">
+<meta property="og:url" content="http://yoursite.com/2017/03/09/Binary Tree Paths/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
-<meta property="og:updated_time" content="2017-03-02T16:49:14.716Z">
+<meta property="og:description" content="The QuestionGiven a binary tree, return all root-to-leaf paths.">
+<meta property="og:updated_time" content="2017-03-10T17:23:54.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kth Largest Element in an Array">
-<meta name="twitter:description" content="The QuestionFind the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.">
+<meta name="twitter:title" content="Binary Tree Paths">
+<meta name="twitter:description" content="The QuestionGiven a binary tree, return all root-to-leaf paths.">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/09/Binary Tree Paths/"/>
 
 
 
 
 
-  <title> Kth Largest Element in an Array | 海天中的一颗小游草 </title>
+  <title> Binary Tree Paths | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/09/Binary Tree Paths/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +290,7 @@
             
             
               
-                Kth Largest Element in an Array
+                Binary Tree Paths
               
             
           </h1>
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T14:20:00+08:00">
-                2017-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-09T01:20:00+08:00">
+                2017-03-09
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/01/Kth Largest Element in an Array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/Kth Largest Element in an Array/" itemprop="commentCount"></span>
+                <a href="/2017/03/09/Binary Tree Paths/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/09/Binary Tree Paths/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,18 +373,19 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.<br><a id="more"></a></p>
-<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><p>Given [3,2,1,5,6,4] and k = 2, return 5.</p>
-<h2 id="The-Answer"><a href="#The-Answer" class="headerlink" title="The Answer"></a>The Answer</h2><h3 id="库函数nth-element（）"><a href="#库函数nth-element（）" class="headerlink" title="库函数nth_element（）"></a>库函数nth_element（）</h3><p>正如上一节<strong>Majority Element</strong>所言的：<br><code>&lt;algorithm&gt;
-template &lt;class RandomAccessIterator&gt;
-void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomAccessIterator last );</code><br>简单的说nth_element算法仅排序第nth个元素（从0开始的索引），如iarray [first,last) 元素区间排序后  iarray[nth] 就是第nth大的元素（从0开始），要注意的是[first,nth) [nth,last)内 的大小循序还不一定<br>只能确定iarray[nth]是第nth大的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">For example,</div><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</div><div class="line">        nth_element(nums.begin(),nums.begin()+(nums.size()-k),nums.end());</div><div class="line">        return nums[nums.size()-k];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><p>思路很简单，选取一个数，作为vector分类的参考，比这个数大的放在一边，其他的放在一边。当大的那一边的个数多余k的时候，也就是所要求得值就在这边，小于k的时候就出现在右边。<br>需要注意一下两点：</p>
-<ul>
-<li>当出现特色情况，vector的数字全是一样，就会出现每次迭代的数字都出现在右边，也就是迭代根本没有意义了。可以直接退出。</li>
-<li>参考值得选取，如何合理的分类，最好的情况就是每一次两个分的的数据个数都是n/2，所以选取数据的最大值和最小值的平均值作为参考条件。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) &#123;</div><div class="line">        int length=nums.size();</div><div class="line">    	if(length==1) return nums[0];//递归介绍条件</div><div class="line">    	</div><div class="line">    	int min,max;//vector地最大值和最小值</div><div class="line">        min=max=nums[0];</div><div class="line">        for(int i=0;i&lt;nums.size();++i)&#123;</div><div class="line">            if(nums[i]&gt;max) max=nums[i];</div><div class="line">            if(nums[i]&lt;min) min=nums[i];</div><div class="line">        &#125;</div><div class="line">        double mid=(min+max)/2.0;//使用最大值和最小值的平均值作为判断条件</div><div class="line">    	</div><div class="line">        vector&lt;int&gt;leftnums,rightnums;//比mid大的放在左边，其他的放在右边</div><div class="line">        for(int i=0;i&lt;length;++i)&#123;</div><div class="line">            if(nums[i]&gt;mid)</div><div class="line">                leftnums.push_back(nums[i]);</div><div class="line">            else</div><div class="line">            	rightnums.push_back(nums[i]);</div><div class="line">        &#125;</div><div class="line">        if(leftnums.size()&gt;=k)//左边的个数多余K的时候，说明要取的值必定在左边</div><div class="line">        	return findKthLargest(leftnums,k);</div><div class="line">        else if(rightnums.size()==length)//这是个特色情况，当vector的数据都是一样的时候，就会出现每一次的递归都会出现在右边的现象，所以这种情况下就直接可以退出，因为每个值都一样，就可以返回第一个值就是所求的值</div><div class="line">            return nums[0];</div><div class="line">        else</div><div class="line">        	return findKthLargest(rightnums,k-leftnums.size());//当左边的vector小于k的时候必定出现在右边的vector</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>~Thanks~<br>By 海天游草~~~2017.3.1</p>
+        <h3 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h3><p>Given a binary tree, return all root-to-leaf paths.<br><a id="more"></a></p>
+<h3 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h3><p>For example, given the following binary tree：<strong>1,2,3,NULL,5</strong><br>All root-to-leaf paths are：<strong>[“1-&gt;2-&gt;5”, “1-&gt;3”]</strong></p>
+<h3 id="The-Answer"><a href="#The-Answer" class="headerlink" title="The Answer"></a>The Answer</h3><p>本题的思路比较简单，就是从root节点进行判断，左右顺序遍历，直到遍历到叶节点时刻，将遍历的路径path插入到一个vector之中，所有情况都完成返回这个vector即可。</p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>虽然本题思路比较简单，但是实现起来还是有很多坑的，我就跳进去一个好久没有出来。几个我遇到的坑分享如下：</p>
+<ol>
+<li>递归函数不能定义为<code>vector&lt;string&gt;</code>的形式，因为这种情况就需要分情况进行判断，当出现遍历到的节点左右子节点都不为空的时刻就会出现问题。</li>
+<li>递归函数应该设置为void，无返回值类型的函数，这个时候就需要找一个参数可以全局传递的。</li>
+<li>设置全局传递的参数<code>vector&lt;string&gt;</code>的时候，需要设置为引用的形式，参数传递需为按索引传递。不然传递进来的就是形参，为按值传递。</li>
+</ol>
+<h4 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h4><p>特别要注意这个坑啊，在定义递归函数的时候，其中定义的vector，由于函数是vector形式，如果想以vector传递值，必须定义为引用<em>&amp;</em>的方式不然是得不到返回值的，返回值一直未空<strong>【】</strong>。定义的方式为<code>vector&lt;string&gt;&amp;res</code>。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; binaryTreePaths(TreeNode* root) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;result;</div><div class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> result;</div><div class="line">        </div><div class="line">        <span class="built_in">string</span> path=to_string(root-&gt;val);</div><div class="line">        searchPath(result,root,path);</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">searchPath</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp;res,TreeNode* root,<span class="built_in">string</span> path)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(root-&gt;left!=<span class="literal">NULL</span>)</div><div class="line">            searchPath(res,root-&gt;left,path+<span class="string">"-&gt;"</span>+to_string(root-&gt;left-&gt;val));</div><div class="line">        <span class="keyword">if</span>(root-&gt;right!=<span class="literal">NULL</span>)</div><div class="line">            searchPath(res,root-&gt;right,path+<span class="string">"-&gt;"</span>+to_string(root-&gt;right-&gt;val));</div><div class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right==<span class="literal">NULL</span>)&#123;</div><div class="line">            res.push_back(path);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>如下就是设置的函数的形式为<code>vector&lt;string&gt;</code>的形式，函数返回值只给出一条路劲的么情况。因为这一条路径递归遍历完之后就有一个return了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; binaryTreePaths(TreeNode* root) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;result;</div><div class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> result;</div><div class="line">        <span class="built_in">string</span> path=to_string(root-&gt;val);</div><div class="line">        <span class="keyword">return</span> result=searchPath(root,path);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;searchPath(TreeNode* root,<span class="built_in">string</span> path)&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;res;</div><div class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right==<span class="literal">NULL</span>)&#123;</div><div class="line">            res.push_back(path);</div><div class="line">            <span class="keyword">return</span> res;</div><div class="line">        &#125;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span>(root-&gt;left!=<span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> searchPath(root-&gt;left,path+<span class="string">"-&gt;"</span>+to_string(root-&gt;left-&gt;val));</div><div class="line">        <span class="keyword">if</span>(root-&gt;right!=<span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> searchPath(root-&gt;right,path+<span class="string">"-&gt;"</span>+to_string(root-&gt;right-&gt;val));</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h4 id="错误情况的返回值"><a href="#错误情况的返回值" class="headerlink" title="错误情况的返回值"></a>错误情况的返回值</h4><p><strong>Your input:</strong>[1,2,3,null,5]<br><strong>Your answer:</strong>[“1-&gt;2-&gt;5”]<br><strong>Expected answer:</strong>[“1-&gt;2-&gt;5”,”1-&gt;3”]</p>
+<p>~Thanks~<br>By 海天游草~~~2017.3.9</p>
 
       
     </div>
@@ -408,9 +409,11 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
       
         <div class="post-tags">
           
-            <a href="/tags/nth-element/" rel="tag"># nth_element</a>
+            <a href="/tags/void/" rel="tag"># void</a>
           
-            <a href="/tags/分治/" rel="tag"># 分治</a>
+            <a href="/tags/按引用传递/" rel="tag"># 按引用传递</a>
+          
+            <a href="/tags/return/" rel="tag"># return</a>
           
         </div>
       
@@ -423,8 +426,8 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/27/Median of Two Sorted Arrays/" rel="next" title="Median of Two Sorted Arrays">
-                <i class="fa fa-chevron-left"></i> Median of Two Sorted Arrays
+              <a href="/2017/03/07/Different Ways to Add Parentheses/" rel="next" title="Different Ways to Add Parentheses">
+                <i class="fa fa-chevron-left"></i> Different Ways to Add Parentheses
               </a>
             
           </div>
@@ -432,10 +435,6 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/03/Majority Element/" rel="prev" title="Majority Element">
-                Majority Element <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,8 +460,8 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/01/Kth Largest Element in an Array/"
-           data-title="Kth Largest Element in an Array" data-url="http://yoursite.com/2017/03/01/Kth Largest Element in an Array/">
+      <div class="ds-thread" data-thread-key="2017/03/09/Binary Tree Paths/"
+           data-title="Binary Tree Paths" data-url="http://yoursite.com/2017/03/09/Binary Tree Paths/">
       </div>
     
   </div>
@@ -564,7 +563,7 @@ void nth_element ( RandomAccessIterator first, RandomAccessIterator nth, RandomA
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Answer"><span class="nav-number">3.</span> <span class="nav-text">The Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#库函数nth-element（）"><span class="nav-number">3.1.</span> <span class="nav-text">库函数nth_element（）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法"><span class="nav-number">3.2.</span> <span class="nav-text">分治算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Answer"><span class="nav-number">3.</span> <span class="nav-text">The Answer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">4.</span> <span class="nav-text">注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码如下"><span class="nav-number">4.1.</span> <span class="nav-text">代码如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误情况的返回值"><span class="nav-number">4.2.</span> <span class="nav-text">错误情况的返回值</span></a></li></ol></li></ol></div>
             
 
           </div>
