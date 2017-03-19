@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="string,flag," />
+  <meta name="keywords" content="中序遍历," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="The QuestionGiven a string, find the length of the longest substring without repeating characters.">
+<meta name="description" content="The QuestionGiven a binary tree, determine if it is a valid binary search tree (BST).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://yoursite.com/2017/02/26/Longest Substring Without Repeating Characters/index.html">
+<meta property="og:title" content="Validate Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/Validate Binary Search Tree——2017.3.18/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionGiven a string, find the length of the longest substring without repeating characters.">
-<meta property="og:updated_time" content="2017-03-02T16:42:54.389Z">
+<meta property="og:description" content="The QuestionGiven a binary tree, determine if it is a valid binary search tree (BST).">
+<meta property="og:updated_time" content="2017-03-19T12:33:09.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="The QuestionGiven a string, find the length of the longest substring without repeating characters.">
+<meta name="twitter:title" content="Validate Binary Search Tree">
+<meta name="twitter:description" content="The QuestionGiven a binary tree, determine if it is a valid binary search tree (BST).">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/26/Longest Substring Without Repeating Characters/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/18/Validate Binary Search Tree——2017.3.18/"/>
 
 
 
 
 
-  <title> Longest Substring Without Repeating Characters | 海天中的一颗小游草 </title>
+  <title> Validate Binary Search Tree | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/26/Longest Substring Without Repeating Characters/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/Validate Binary Search Tree——2017.3.18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +290,7 @@
             
             
               
-                Longest Substring Without Repeating Characters
+                Validate Binary Search Tree
               
             
           </h1>
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-26T20:00:00+08:00">
-                2017-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T20:00:00+08:00">
+                2017-03-18
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/26/Longest Substring Without Repeating Characters/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/26/Longest Substring Without Repeating Characters/" itemprop="commentCount"></span>
+                <a href="/2017/03/18/Validate Binary Search Tree——2017.3.18/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/Validate Binary Search Tree——2017.3.18/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,18 +373,17 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given a string, find the length of the longest substring without repeating characters.<br><a id="more"></a></p>
-<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><p>Given “<strong>abcabcbb</strong>“, the answer is “<strong>abc</strong>“, which the length is 3.<br>Given “<strong>bbbbb</strong>“, the answer is “<strong>b</strong>“, with the length of 1.<br>Given “<strong>pwwkew</strong>“, the answer is “<strong>wke</strong>“, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence </p>
-<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p>这个题目真是不说了，就是考虑各种情况而已。</p>
-<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ul>
-<li>字符串长度为0时刻；</li>
-<li>字符串长度为1时刻；</li>
-<li>字符串长度大于1时刻。</li>
+        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given a binary tree, determine if it is a valid binary search tree (BST).<br><a id="more"></a><br>Assume a BST is defined as follows:</p>
+<ul>
+<li>The left subtree of a node contains only nodes with keys less than the node’s key.</li>
+<li>The right subtree of a node contains only nodes with keys greater than the node’s key.</li>
+<li>Both the left and right subtrees must also be binary search trees.</li>
 </ul>
-<h2 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h2><p>主要想法就是嵌套遍历，外层遍历字符串，内层遍历外层遍历过的字符串。这个时候有一个关键点就是，当内层<strong>j</strong>遍历到外层<strong>i</strong>处时刻也就是当<strong>s[i]=s[j]</strong>时刻也就是这个时刻字符串已经有重复现象出现了，那么我们就可以设置内层下次开始遍历的地方就是这个关键点的下一个位置，设置<strong>flag=j+1</strong>，并且结束内层遍历。只要没有出现这种情况，<strong>longest</strong>就可以一直增加了。之后每一个点比较一下<strong>上次的longest和本次temp的大小</strong>用阿里设定新的<strong>longest</strong>。</p>
-<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> length=s.size();</div><div class="line">            <span class="keyword">int</span> longest=<span class="number">0</span>;</div><div class="line">            <span class="keyword">int</span> flag=<span class="number">0</span>;<span class="comment">//新字符如果在已有的不重复的字符串出现重复，记录已有不重复字符串的重复字符的位置</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;++i)&#123;</div><div class="line">               <span class="keyword">int</span> temp=<span class="number">1</span>;<span class="comment">//记录目前的不重复的字符串的长度</span></div><div class="line">            	<span class="keyword">for</span>(<span class="keyword">int</span> j=flag;j&lt;i;++j)&#123;</div><div class="line">		    		<span class="keyword">if</span>(s[j]==s[i])&#123;</div><div class="line">		    			flag=j+<span class="number">1</span>;</div><div class="line">			    		<span class="keyword">break</span>;<span class="comment">//当出现重复就结束当前循环</span></div><div class="line">			    	&#125;</div><div class="line">		    		<span class="keyword">else</span> ++temp;<span class="comment">//没有重复，就累加temp</span></div><div class="line">	    		&#125;</div><div class="line">	    		<span class="keyword">if</span>(longest&lt;temp) longest=temp;<span class="comment">//当出现重复的时候记录新的最大不重复字符串位置</span></div><div class="line">	    	&#125;</div><div class="line">	    	<span class="keyword">return</span> longest;</div><div class="line">        &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h2 id="第二种解法"><a href="#第二种解法" class="headerlink" title="第二种解法"></a>第二种解法</h2><p>然而上面的虽然也是accepted，但是我自己也明白有点复杂，并且各个边界条件的判断让我试欲生欲死，就一直在思考有没有好的解法，查阅资料发现可以以数组形式有array[value]=index，或者是map有：map[value:index]。这样就好判断了。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;map1;</div><div class="line">        <span class="keyword">int</span> maxlen=<span class="number">0</span>;<span class="comment">//记录最大字符串</span></div><div class="line">        <span class="keyword">int</span> temp=<span class="number">0</span>;<span class="comment">//记录当前出现重复字符的最大下标</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();++i)&#123;</div><div class="line">            <span class="keyword">if</span>(map1[s[i]])<span class="comment">//判断当前字符在map中是否已经存在</span></div><div class="line">                temp=max(temp,map1[s[i]])<span class="number">-1</span>;<span class="comment">//新的重复出现字符，和已重复出现的字符，记录其中较大下标的字符</span></div><div class="line">            map1[s[i]]=i+<span class="number">1</span>;<span class="comment">//为了避免出现map1[s[0]]=0不能在上面的if条件中使用，记录其值为下标加1</span></div><div class="line">            maxlen=max(maxlen,i-temp);<span class="comment">//最近重复字符到目前遍历处的距离，即为不重复子串长度</span></div><div class="line">		&#125;</div><div class="line">        <span class="keyword">return</span> maxlen;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>~Thanks~<br>By 海天游草<del>~2017.2.26</del>~</p>
+<p>就是判断一个数是否是二叉搜索树：</p>
+<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p>题目的意思表达的比较清楚，有一个需要特别注意的是：<br><strong>二叉搜索树是左子树的所有节点的都比根节点小，右子树的所有节点都比根节点大</strong>，而不是只是左节点小于根节点小于右节点就行了。<br>如二叉树为<strong>【2,1,3,0,3,1,4】</strong>使用下面代码也返回值为<strong>true</strong>，然而它不是二叉搜索树。</p>
+<h3 id="常见错误代码如下"><a href="#常见错误代码如下" class="headerlink" title="常见错误代码如下"></a>常见错误代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//无节点情况</span></div><div class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right==<span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//一个节点情况</span></div><div class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right!=<span class="literal">NULL</span>)&#123;<span class="comment">//两个节点情况</span></div><div class="line">            <span class="keyword">if</span>(root-&gt;right-&gt;val&gt;root-&gt;val)</div><div class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(root-&gt;right==<span class="literal">NULL</span>&amp;&amp;root-&gt;left!=<span class="literal">NULL</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(root-&gt;left-&gt;val&lt;root-&gt;val)</div><div class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>((root-&gt;left-&gt;val&lt;root-&gt;val)&amp;&amp;(root-&gt;val&lt;root-&gt;right-&gt;val))<span class="comment">//超过三个节点时，这里面的判断条件就是错误的，只是判断当前节点的左节点小于根节点小于右节点。</span></div><div class="line">            <span class="keyword">return</span> isValidBST(root-&gt;left)&amp;&amp;isValidBST(root-&gt;right);</div><div class="line">        <span class="keyword">else</span> </div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="正确代码如下"><a href="#正确代码如下" class="headerlink" title="正确代码如下"></a>正确代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;<span class="built_in">list</span>;</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        <span class="keyword">if</span>(root-&gt;left==<span class="literal">NULL</span>&amp;&amp;root-&gt;right==<span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        search(root);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">list</span>.size()<span class="number">-1</span>;++i)&#123;<span class="comment">//判断序列，是否是递增的情况</span></div><div class="line">            <span class="keyword">if</span>(<span class="built_in">list</span>[i]&gt;=<span class="built_in">list</span>[i+<span class="number">1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">search</span><span class="params">(TreeNode * root)</span></span>&#123;<span class="comment">//中序遍历，遍历结果应该是一个递增的序列</span></div><div class="line">        <span class="keyword">if</span>(!root)<span class="keyword">return</span>;</div><div class="line">        search(root-&gt;left);</div><div class="line">        <span class="built_in">list</span>.push_back(root-&gt;val);</div><div class="line">        search(root-&gt;right);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>~Thanks~<br>By 海天游草~~~2017.3.18</p>
 
       
     </div>
@@ -408,9 +407,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/string/" rel="tag"># string</a>
-          
-            <a href="/tags/flag/" rel="tag"># flag</a>
+            <a href="/tags/中序遍历/" rel="tag"># 中序遍历</a>
           
         </div>
       
@@ -423,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/24/Add Two Numbers/" rel="next" title="Add Two Numbers">
-                <i class="fa fa-chevron-left"></i> Add Two Numbers
+              <a href="/2017/03/18/Relative Ranks——2017.3.18/" rel="next" title="Relative Ranks">
+                <i class="fa fa-chevron-left"></i> Relative Ranks
               </a>
             
           </div>
@@ -433,8 +430,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/27/Median of Two Sorted Arrays/" rel="prev" title="Median of Two Sorted Arrays">
-                Median of Two Sorted Arrays <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/19/Find Bottom Left Tree Value——2017.3.19/" rel="prev" title="Find Bottom Left Tree Value">
+                Find Bottom Left Tree Value <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -461,8 +458,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/26/Longest Substring Without Repeating Characters/"
-           data-title="Longest Substring Without Repeating Characters" data-url="http://yoursite.com/2017/02/26/Longest Substring Without Repeating Characters/">
+      <div class="ds-thread" data-thread-key="2017/03/18/Validate Binary Search Tree——2017.3.18/"
+           data-title="Validate Binary Search Tree" data-url="http://yoursite.com/2017/03/18/Validate Binary Search Tree——2017.3.18/">
       </div>
     
   </div>
@@ -564,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">3.</span> <span class="nav-text">The Anwser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips"><span class="nav-number">4.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的思路"><span class="nav-number">5.</span> <span class="nav-text">我的思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码如下："><span class="nav-number">6.</span> <span class="nav-text">代码如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种解法"><span class="nav-number">7.</span> <span class="nav-text">第二种解法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">2.</span> <span class="nav-text">The Anwser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误代码如下"><span class="nav-number">2.1.</span> <span class="nav-text">常见错误代码如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确代码如下"><span class="nav-number">2.2.</span> <span class="nav-text">正确代码如下</span></a></li></ol></li></ol></div>
             
 
           </div>
