@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="queue,层次," />
+  <meta name="keywords" content="Greedy," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="The QuestionGiven a binary tree, find the leftmost value in the last row of the tree.">
+<meta name="description" content="The QuestionA sequence of numbers is called a wiggle sequence if the differences between successive numbers strictly alternate between positive and negative.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Find Bottom Left Tree Value">
-<meta property="og:url" content="http://yoursite.com/2017/03/19/Find Bottom Left Tree Value——2017.3.19/index.html">
+<meta property="og:title" content="Wiggle Subsequence">
+<meta property="og:url" content="http://yoursite.com/2017/04/05/Wiggle Subsequence—4.5/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionGiven a binary tree, find the leftmost value in the last row of the tree.">
-<meta property="og:updated_time" content="2017-03-19T12:32:53.660Z">
+<meta property="og:description" content="The QuestionA sequence of numbers is called a wiggle sequence if the differences between successive numbers strictly alternate between positive and negative.">
+<meta property="og:updated_time" content="2017-04-06T17:00:18.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Find Bottom Left Tree Value">
-<meta name="twitter:description" content="The QuestionGiven a binary tree, find the leftmost value in the last row of the tree.">
+<meta name="twitter:title" content="Wiggle Subsequence">
+<meta name="twitter:description" content="The QuestionA sequence of numbers is called a wiggle sequence if the differences between successive numbers strictly alternate between positive and negative.">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/19/Find Bottom Left Tree Value——2017.3.19/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/05/Wiggle Subsequence—4.5/"/>
 
 
 
 
 
-  <title> Find Bottom Left Tree Value | 海天中的一颗小游草 </title>
+  <title> Wiggle Subsequence | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/Find Bottom Left Tree Value——2017.3.19/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/05/Wiggle Subsequence—4.5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +290,7 @@
             
             
               
-                Find Bottom Left Tree Value
+                Wiggle Subsequence
               
             
           </h1>
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T12:00:00+08:00">
-                2017-03-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-05T01:00:00+08:00">
+                2017-04-05
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/19/Find Bottom Left Tree Value——2017.3.19/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/19/Find Bottom Left Tree Value——2017.3.19/" itemprop="commentCount"></span>
+                <a href="/2017/04/05/Wiggle Subsequence—4.5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/05/Wiggle Subsequence—4.5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,17 +373,27 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given a binary tree, find the leftmost value in the last row of the tree.<br><a id="more"></a></p>
-<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><p>如下例子：<br><code>树:2,1,3。return 1</code><br><code>树1,2,3,4，null，5,6,null,null,7,null,null,null。return 7</code></p>
-<p><strong>就是给你一个二叉树，求最后一层的最左边一个数是多少？。</strong></p>
-<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><ol>
-<li>使用广度优先搜索，按层次遍历。</li>
-<li>遍历到新层次的时候记录第一个节点。</li>
-<li>可以使用队列，按层次进队，之后没出队一个节点，就添加这个节点的子节点入队。</li>
-<li>遍历新层次记录第一个节点的要求，可以将上一层的曾次数和新层次相比，记录，一旦记录之后就将比较的层次置新。<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findBottomLeftValue</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt;result;</div><div class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;level;</div><div class="line">        level.push(<span class="number">0</span>);</div><div class="line">        result.push(root);</div><div class="line">        <span class="keyword">int</span> temp=<span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span>(result.size())&#123;</div><div class="line">            <span class="keyword">int</span> m=level.front();level.pop();</div><div class="line">            TreeNode* first=result.front();result.pop();</div><div class="line">            <span class="keyword">if</span>(first-&gt;left)&#123;</div><div class="line">                result.push(first-&gt;left);</div><div class="line">                level.push(m+<span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(first-&gt;right)&#123;</div><div class="line">                result.push(first-&gt;right);</div><div class="line">                level.push(m+<span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(m&gt;temp)&#123;</div><div class="line">                temp=m;</div><div class="line">                root=first;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> root-&gt;val;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>A sequence of numbers is called a wiggle sequence if the differences between successive numbers strictly alternate between positive and negative.<br><a id="more"></a><br>The first difference (if one exists) may be either positive or negative. A sequence with fewer than two elements is trivially a wiggle sequence.</p>
+<p>For example, [1,7,4,9,2,5] is a wiggle sequence because the differences (6,-3,5,-7,3) are alternately positive and negative. In contrast, [1,4,7,2,5] and [1,7,4,5,5] are not wiggle sequences, the first because its first two differences are positive and the second because its last difference is zero.</p>
+<p>Given a sequence of integers, return the length of the longest subsequence that is a wiggle sequence. A subsequence is obtained by deleting some number of elements (eventually, also zero) from the original sequence, leaving the remaining elements in their original order.</p>
+<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><ul>
+<li><strong>Input: [1,7,4,9,2,5]  Output: 6</strong><br><code>The entire sequence is a wiggle sequence.</code></li>
+<li><strong>Input: [1,17,5,10,13,15,10,5,16,8]   Output: 7</strong><br><code>There are several subsequences that achieve this length. One is [1,17,10,13,10,16,8].</code></li>
+<li><strong>Input: [1,2,3,4,5,6,7,8,9]  Output: 2</strong></li>
+</ul>
+<p><strong>一组数组，求其最大摆动子序列，注意这里的子序列不一定指的是连续子序列。所谓的摆动子序列就是序列中的数据增长趋势是递增和递减交替进行，数据的曲线表示就是来回的折线</strong></p>
+<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p>解这个问题的核心就是记录数据的增长的变化情况是递增还是递减，或者是不变的数据。</p>
+<ol>
+<li>使用一个int变量，其中1代表递增，0代表递减，2代表数据不变（和前一个数据一样大小）；</li>
+<li>查看数组的长度，当长度小于等于1的时候，总结返回数组的大小；</li>
+<li>当数组大于等于2的时候，首先摆动子序列的最小长度就位1；</li>
+<li>开始比较时，当当前的数组的是递增趋势的话，那么在其之前的数组应该是递减或者保持不变的趋势，摆动子序列才进行更新；</li>
+<li>当当前的数组是递减趋势的话，那么在其之前的数组应该是递增或者保持不变的趋势，摆动子序列才进行更新。</li>
 </ol>
-<p>~Thanks~<br>By 海天游草~~~2017.3.19</p>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int wiggleMaxLength(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">    	int len=nums.size();</div><div class="line">    	if(len&lt;=1)return len;//数组大小情况</div><div class="line">		int count=1;</div><div class="line">		int flag=2;//之前数组趋势变化情况的记录元素，当保持不变时为2，递增为1，递减为0</div><div class="line">		for(int i=1;i&lt;len;++i)&#123;</div><div class="line">		    if(nums[i]&gt;nums[i-1])&#123;//当前数组的变化趋势为递增情况</div><div class="line">		        if(flag==2)&#123;//之前保持不变时</div><div class="line">		            count++;</div><div class="line">		            flag=1;</div><div class="line">		        &#125;   </div><div class="line">		        if(flag==0)&#123;//之前递减时</div><div class="line">		            count++;</div><div class="line">		            flag=1;</div><div class="line">		        &#125;</div><div class="line">		    &#125;</div><div class="line">		    if(nums[i]&lt;nums[i-1])&#123;//当前数组的变化趋势为递减情况</div><div class="line">		        if(flag==2)&#123;//之前保持不变时 </div><div class="line">		            count++;</div><div class="line">		            flag=0;</div><div class="line">		        &#125;   </div><div class="line">		        if(flag==1)&#123;//之前递增时</div><div class="line">		            count++;</div><div class="line">		            flag=0;</div><div class="line">		        &#125;</div><div class="line">		    &#125;</div><div class="line">		&#125;</div><div class="line">		return count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><code>这里需要需要注意，使用int记录才可以，之前使用的bool变量记录趋势变化，1为递增，0为递减，NULL为不变情况，但是会出现错误，代码如下所示</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int wiggleMaxLength(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">    	int len=nums.size();</div><div class="line">    	if(len==0)return 0;</div><div class="line">		if(len==1)return 1;</div><div class="line">		int count=1;</div><div class="line">		bool flag=NULL;</div><div class="line">		for(int i=1;i&lt;len;++i)&#123;</div><div class="line">		    if(nums[i]&gt;nums[i-1])&#123;</div><div class="line">		        if(flag==NULL)&#123;</div><div class="line">		            cout&lt;&lt;nums[i]&lt;&lt;&quot; &quot;;</div><div class="line">		            count++;</div><div class="line">		            flag=true;</div><div class="line">		        &#125;   </div><div class="line">		        if(flag==false)&#123;</div><div class="line">		            cout&lt;&lt;nums[i]&lt;&lt;&quot; &quot;;</div><div class="line">		            count++;</div><div class="line">		            flag=true;</div><div class="line">		        &#125;</div><div class="line">		    &#125;</div><div class="line">		    if(nums[i]&lt;nums[i-1])&#123;</div><div class="line">		        if(flag==NULL)&#123;</div><div class="line">		            cout&lt;&lt;nums[i]&lt;&lt;&quot; &quot;;</div><div class="line">		            count++;</div><div class="line">		            flag=false;</div><div class="line">		        &#125;   </div><div class="line">		        if(flag==true)&#123;</div><div class="line">		            cout&lt;&lt;nums[i]&lt;&lt;&quot; &quot;;</div><div class="line">		            count++;</div><div class="line">		            flag=false;</div><div class="line">		        &#125;</div><div class="line">		    &#125;</div><div class="line">		&#125;</div><div class="line">		return count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><code>另外还需要注意，最大摆动子序列不一定是连续的子序列，望注意!如下代码求的是连续的子序列的情况</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int wiggleMaxLength(vector&lt;int&gt;&amp; nums) &#123;</div><div class="line">    	int len=nums.size();</div><div class="line">    	vector&lt;int&gt;sub;</div><div class="line">    	if(len==0)return 0;</div><div class="line">		if(len==1)return 1;</div><div class="line">    	for(int i=1;i&lt;len;++i)</div><div class="line">    	    sub.push_back(nums[i]-nums[i-1]);</div><div class="line">    	int res(2),maxL(1);</div><div class="line">        for(int i=0;i&lt;sub.size()-1;++i)&#123;</div><div class="line">            if(sub[i]==0)continue;</div><div class="line">            if(sub[i]*sub[i+1]&lt;0)</div><div class="line">                ++res;</div><div class="line">            else</div><div class="line">                res=2;</div><div class="line">            maxL=max(maxL,res);</div><div class="line">        &#125;</div><div class="line">		return maxL;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>~Thanks~<br>By 海天游草~~~2017.4.5</p>
 
       
     </div>
@@ -407,9 +417,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/queue/" rel="tag"># queue</a>
-          
-            <a href="/tags/层次/" rel="tag"># 层次</a>
+            <a href="/tags/Greedy/" rel="tag"># Greedy</a>
           
         </div>
       
@@ -422,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/18/Validate Binary Search Tree——2017.3.18/" rel="next" title="Validate Binary Search Tree">
-                <i class="fa fa-chevron-left"></i> Validate Binary Search Tree
+              <a href="/2017/04/04/Jump Game—4.4/" rel="next" title="Jump Game">
+                <i class="fa fa-chevron-left"></i> Jump Game
               </a>
             
           </div>
@@ -431,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/25/Best Time to Buy and Sell Stock II——2017.3.26/" rel="prev" title="Best Time to Buy and Sell Stock II">
-                Best Time to Buy and Sell Stock II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,8 +464,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/19/Find Bottom Left Tree Value——2017.3.19/"
-           data-title="Find Bottom Left Tree Value" data-url="http://yoursite.com/2017/03/19/Find Bottom Left Tree Value——2017.3.19/">
+      <div class="ds-thread" data-thread-key="2017/04/05/Wiggle Subsequence—4.5/"
+           data-title="Wiggle Subsequence" data-url="http://yoursite.com/2017/04/05/Wiggle Subsequence—4.5/">
       </div>
     
   </div>
