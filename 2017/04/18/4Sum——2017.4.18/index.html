@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vector,map," />
+  <meta name="keywords" content="Set," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="The QuestionGiven scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”.">
+<meta name="description" content="The QuestionGiven an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Relative Ranks">
-<meta property="og:url" content="http://yoursite.com/2017/03/18/Relative Ranks——2017.3.18/index.html">
+<meta property="og:title" content="4Sum">
+<meta property="og:url" content="http://yoursite.com/2017/04/18/4Sum——2017.4.18/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionGiven scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”.">
-<meta property="og:updated_time" content="2017-03-19T12:32:35.130Z">
+<meta property="og:description" content="The QuestionGiven an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.">
+<meta property="og:updated_time" content="2017-04-21T15:34:24.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Relative Ranks">
-<meta name="twitter:description" content="The QuestionGiven scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”.">
+<meta name="twitter:title" content="4Sum">
+<meta name="twitter:description" content="The QuestionGiven an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/18/Relative Ranks——2017.3.18/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/18/4Sum——2017.4.18/"/>
 
 
 
 
 
-  <title> Relative Ranks | 海天中的一颗小游草 </title>
+  <title> 4Sum | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/Relative Ranks——2017.3.18/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/4Sum——2017.4.18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +290,7 @@
             
             
               
-                Relative Ranks
+                4Sum
               
             
           </h1>
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-18T20:00:00+08:00">
-                2017-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T01:00:00+08:00">
+                2017-04-18
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/18/Relative Ranks——2017.3.18/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/Relative Ranks——2017.3.18/" itemprop="commentCount"></span>
+                <a href="/2017/04/18/4Sum——2017.4.18/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/18/4Sum——2017.4.18/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,27 +373,29 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”.<br><a id="more"></a></p>
-<ul>
-<li>Input: [5, 4, 3, 2, 1]</li>
-<li>Output: [“Gold Medal”, “Silver Medal”, “Bronze Medal”, “4”, “5”]</li>
-<li>Explanation: The first three athletes got the top three highest scores, so they got “Gold Medal”, “Silver Medal” and “Bronze Medal”. </li>
-<li>For the left two athletes, you just need to output their relative ranks according to their scores.</li>
-</ul>
-<p>Note:</p>
+        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.<br><a id="more"></a><br>Note: The solution set must not contain duplicate quadruplets.<br>就是给一个数组，在其中寻找所有的四个数字的组合，这四个数组字和为target。</p>
+<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">For example, given array S = [1, 0, -1, 0, -2, 2], and target = 0。</div><div class="line">A solution set is:</div><div class="line">[</div><div class="line">  [-1,  0, 0, 1],</div><div class="line">  [-2, -1, 1, 2],</div><div class="line">  [-2,  0, 0, 2]</div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p><strong>使用递归求解的方式</strong>，结果是可以<strong><code>Accepted</code>，但是：<code>Time Limit Exceeded</code></strong>。</p>
 <ol>
-<li>N is a positive integer and won’t exceed 10,000.</li>
-<li>All the scores of athletes are guaranteed to be unique.</li>
+<li>判断数组的长度，长度小于四就不用判断了</li>
+<li>对数组进行递增排序</li>
+<li>对数组从头开始判断所有的四个数字的组合，也就是path插入第一个其他的就可以递归的插入，在验证是不是target即可</li>
+<li>对于符合条件的path，全部插入到结果中</li>
+<li>对于结果进行去重复。</li>
 </ol>
-<p>就是给你一组分数，给他们按照分数的顺序进行排名。</p>
-<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><ol>
-<li>对数组进行排序，排序结果就是名次，这就涉及到如何记录它所对应的的人。</li>
-<li>产生一个新的vector用于记录原有的nums，因为排完序之后nums就变为了排序后的vector引用。</li>
-<li>产生一个map对象用于记录分数和名次之间的对应关系。</li>
-<li>使用记录vector就可以按照要求给人员名次。<h3 id="常见错误代码如下"><a href="#常见错误代码如下" class="headerlink" title="常见错误代码如下"></a>常见错误代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findRelativeRanks(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;result;</div><div class="line">        <span class="keyword">int</span> len=nums.size();</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;sortNum(nums);<span class="comment">//记录原vector防止排完序之后引用变化</span></div><div class="line">        </div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt;map1;</div><div class="line">        sort(nums.begin(),nums.end());<span class="comment">//对vector进行排序，排序结果是由小到大</span></div><div class="line">        </div><div class="line">        map1[nums[len<span class="number">-1</span>]]=<span class="string">"Gold Medal"</span>;<span class="comment">//排完序后的vector记录分数和名次之间的对应关系</span></div><div class="line">        map1[nums[len<span class="number">-2</span>]]=<span class="string">"Silver Medal"</span>;</div><div class="line">        map1[nums[len<span class="number">-3</span>]]=<span class="string">"Bronze Medal"</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len<span class="number">-3</span>;++i)&#123;</div><div class="line">            map1[nums[i]]=to_string(len-i);<span class="comment">//倒数第四名之后，赋值直接为其名次</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;sortNum.size();++j)&#123;</div><div class="line">            result.push_back(map1[sortNum[j]]);<span class="comment">//产生map对应结果可以和原vector进行对照，得到结果</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;result;</div><div class="line">    <span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;filter;</div><div class="line">    </div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; fourSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="keyword">if</span>(nums.size()&lt;<span class="number">4</span>)<span class="keyword">return</span> result;  </div><div class="line">        sort(nums.begin(), nums.end());  </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; path;  </div><div class="line">        findPath(nums,<span class="number">0</span>,path,<span class="number">0</span>,target); </div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;::iterator it=filter.begin();it!=filter.end();it++) </div><div class="line">            result.push_back(*it);</div><div class="line">        <span class="keyword">return</span> result;  </div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">findPath</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;nums,<span class="keyword">int</span> index,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp;path,<span class="keyword">int</span> sum,<span class="keyword">int</span> target)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(path.size() &gt;=<span class="number">4</span>)  </div><div class="line">        &#123;  </div><div class="line">            <span class="keyword">if</span>(path.size()==<span class="number">4</span>&amp;&amp;sum==target)&#123;</div><div class="line">                filter.insert(path);</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">return</span>; </div><div class="line">        &#125;  </div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=index;i&lt;nums.size();++i)&#123;</div><div class="line">            path.push_back(nums[i]);</div><div class="line">            sum+=nums[i];</div><div class="line">            findPath(nums,i+<span class="number">1</span>,path,sum,target);</div><div class="line">            path.pop_back();</div><div class="line">            sum-=nums[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>由于使用的是递归的方式，重复判断的情况很多，所以超时，使用如下方式：</p>
+<ol>
+<li>对数组进行排序</li>
+<li>确定四个数字中的前两个数字</li>
+<li>对着两个数字之后的数字，设置left和right指示；</li>
+<li>求这四个数字的和是否为target的需求；</li>
+<li>当大于target的时候，right减小</li>
+<li>当小于target的时候，left变大</li>
+<li>循环判断所有的情况。</li>
 </ol>
-<p>~Thanks~<br>By 海天游草~~~2017.3.18</p>
+<h3 id="代码如下-1"><a href="#代码如下-1" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    set&lt;vector&lt;int&gt;&gt;res;</div><div class="line">    vector&lt;vector&lt;int&gt;&gt;result;</div><div class="line">    vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) &#123;</div><div class="line">        if(nums.size()&lt;4)return result;  </div><div class="line">        sort(nums.begin(), nums.end());  </div><div class="line">        int len=nums.size();</div><div class="line">        for(int i=0;i&lt;len-3;++i)&#123;</div><div class="line">            for(int j=i+1;j&lt;len-2;++j)&#123;</div><div class="line">                int left=j+1,right=len-1;</div><div class="line">                while(left&lt;right)&#123;</div><div class="line">                    vector&lt;int&gt; path; </div><div class="line">                    int sum=nums[i]+nums[j]+nums[left]+nums[right];</div><div class="line">                    if(sum==target)&#123;</div><div class="line">                        path.push_back(nums[i]);</div><div class="line">                        path.push_back(nums[j]);</div><div class="line">                        path.push_back(nums[left]);</div><div class="line">                        path.push_back(nums[right]);</div><div class="line">                        res.insert(path);</div><div class="line">                        ++left;</div><div class="line">                        --right;</div><div class="line">                    &#125;</div><div class="line">                    else if(sum&lt;target)++left;</div><div class="line">                    else --right;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(set&lt;vector&lt;int&gt;&gt;::iterator it=res.begin();it!=res.end();++it)</div><div class="line">            result.push_back(*it);</div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>~Thanks~<br>By 海天游草~~~2017.4.18</p>
 
       
     </div>
@@ -417,9 +419,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vector/" rel="tag"># vector</a>
-          
-            <a href="/tags/map/" rel="tag"># map</a>
+            <a href="/tags/Set/" rel="tag"># Set</a>
           
         </div>
       
@@ -432,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/16/Maximum Depth of Binary Treee—2017.3.16/" rel="next" title="Maximum Depth of Binary Treee">
-                <i class="fa fa-chevron-left"></i> Maximum Depth of Binary Treee
+              <a href="/2017/04/14/Path Sum III—2017.4.14/" rel="next" title="Path Sum III">
+                <i class="fa fa-chevron-left"></i> Path Sum III
               </a>
             
           </div>
@@ -441,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/18/Validate Binary Search Tree——2017.3.18/" rel="prev" title="Validate Binary Search Tree">
-                Validate Binary Search Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,8 +466,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/18/Relative Ranks——2017.3.18/"
-           data-title="Relative Ranks" data-url="http://yoursite.com/2017/03/18/Relative Ranks——2017.3.18/">
+      <div class="ds-thread" data-thread-key="2017/04/18/4Sum——2017.4.18/"
+           data-title="4Sum" data-url="http://yoursite.com/2017/04/18/4Sum——2017.4.18/">
       </div>
     
   </div>
@@ -573,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">2.</span> <span class="nav-text">The Anwser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误代码如下"><span class="nav-number">2.1.</span> <span class="nav-text">常见错误代码如下</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">3.</span> <span class="nav-text">The Anwser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下"><span class="nav-number">3.1.</span> <span class="nav-text">代码如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下-1"><span class="nav-number">3.2.</span> <span class="nav-text">代码如下</span></a></li></ol></li></ol></div>
             
 
           </div>
