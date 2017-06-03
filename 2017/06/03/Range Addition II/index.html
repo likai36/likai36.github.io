@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="INT_MIN," />
+  <meta name="keywords" content="DP," />
 
 
 
@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="The QuestionThere are a number of spherical balloons spread in two-dimensional space.">
+<meta name="description" content="The QuestionGiven an m * n matrix M initialized with all 0’s and several update operations.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Minimum Number of Arrows to Burst Balloons">
-<meta property="og:url" content="http://yoursite.com/2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/index.html">
+<meta property="og:title" content="Range Addition II">
+<meta property="og:url" content="http://yoursite.com/2017/06/03/Range Addition II/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
-<meta property="og:description" content="The QuestionThere are a number of spherical balloons spread in two-dimensional space.">
-<meta property="og:updated_time" content="2017-04-04T15:37:15.227Z">
+<meta property="og:description" content="The QuestionGiven an m * n matrix M initialized with all 0’s and several update operations.">
+<meta property="og:updated_time" content="2017-06-03T16:08:45.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Minimum Number of Arrows to Burst Balloons">
-<meta name="twitter:description" content="The QuestionThere are a number of spherical balloons spread in two-dimensional space.">
+<meta name="twitter:title" content="Range Addition II">
+<meta name="twitter:description" content="The QuestionGiven an m * n matrix M initialized with all 0’s and several update operations.">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/03/Range Addition II/"/>
 
 
 
 
 
-  <title> Minimum Number of Arrows to Burst Balloons | 海天中的一颗小游草 </title>
+  <title> Range Addition II | 海天中的一颗小游草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/03/Range Addition II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海天游草">
@@ -290,7 +290,7 @@
             
             
               
-                Minimum Number of Arrows to Burst Balloons
+                Range Addition II
               
             
           </h1>
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T23:00:00+08:00">
-                2017-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-03T01:00:00+08:00">
+                2017-06-03
               </time>
             
 
@@ -346,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/" itemprop="commentCount"></span>
+                <a href="/2017/06/03/Range Addition II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/03/Range Addition II/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,18 +373,18 @@
       
 
       
-        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>There are a number of spherical balloons spread in two-dimensional space.<br><a id="more"></a><br>For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it’s horizontal, y-coordinates don’t matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.<br>An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons.</p>
-<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><p><strong>Input:</strong><br>[[10,16], [2,8], [1,6], [7,12]]<br><strong>Output:</strong><br>2<br><strong>Explanation:</strong><br>One way is to shoot one arrow for example at x = 6 (bursting the balloons [2,8] and [1,6]) and another arrow at x = 11 (bursting the other two balloons).</p>
-<p><strong>就是给你一组气球，每一个有一个水平输入的开始和结束坐标（可以理解成气球有一个大小范围），沿着垂直于x轴方向射出一箭，记为，只要其射出点大于气球的开始坐标，小于气球的结束坐标，就可以射破气球，需要求得是最少需要多少箭可以射破所有的气球。</strong></p>
-<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><ol>
-<li>对输入的气球组按照结束坐标进行排序（从大到小）；</li>
-<li>结束坐标相等的话按照开始坐标排序，不然按照结束坐标进行排序；</li>
-<li>取箭头方向为第一个气球的结束坐标，当之后的气球的开始坐标小于箭头方向时，说明这个箭头也可以射破这个气球；</li>
-<li>不然的话，箭头的数量就要多一个才可以。</li>
-</ol>
-<h3 id="使用INT-MIN的代码如下"><a href="#使用INT-MIN的代码如下" class="headerlink" title="使用INT_MIN的代码如下"></a>使用INT_MIN的代码如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    static bool sort1(pair&lt;int,int&gt;&amp;a,pair&lt;int,int&gt;&amp;b)&#123;</div><div class="line">        return a.second==b.second?a.first&lt;b.first:a.second&lt;b.second;</div><div class="line">    &#125;</div><div class="line">    int findMinArrowShots(vector&lt;pair&lt;int, int&gt;&gt;&amp; points) &#123;</div><div class="line">        int count=0,arrow=INT_MIN;</div><div class="line">        sort(points.begin(),points.end(),sort1);//引入第三方函数的排序函数</div><div class="line">        for(int i=0;i&lt;points.size();++i)&#123;</div><div class="line">            if(arrow!=INT_MIN&amp;&amp;points[i].first&lt;=arrow)continue;//箭头方向大于气球的开始坐标的时候，不需要新的箭头就可以射破气球</div><div class="line">            arrow=points[i].second;//更新箭头方向</div><div class="line">            count++;//箭头数量要多一个</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="自己的代码"><a href="#自己的代码" class="headerlink" title="自己的代码"></a>自己的代码</h3><p>这个代码不适用INT_MIN需要自己判断<strong>points</strong>是否为空，并且还需要根据这个情况进行更新剪头的数量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    static bool sort1(pair&lt;int,int&gt;&amp;a,pair&lt;int,int&gt;&amp;b)&#123;</div><div class="line">        return a.second==b.second?a.first&lt;b.first:a.second&lt;b.second;</div><div class="line">    &#125;</div><div class="line">    int findMinArrowShots(vector&lt;pair&lt;int, int&gt;&gt;&amp; points) &#123;</div><div class="line">        int count,arrow;</div><div class="line">        if(points.size()==0)//为空时，箭头数量就为0</div><div class="line">            count=0;</div><div class="line">        else&#123;//不为空至少为1，且更新箭头方向</div><div class="line">            count=1;</div><div class="line">            arrow=points[0].second;</div><div class="line">        &#125;</div><div class="line">        sort(points.begin(),points.end(),sort1);</div><div class="line">        for(int i=1;i&lt;points.size();++i)&#123;//和上面同样的判断方法</div><div class="line">            if(points[i].first&lt;=arrow)continue;</div><div class="line">            arrow=points[i].second;</div><div class="line">            count++;</div><div class="line">        &#125;</div><div class="line">        return count;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>~Thanks~<br>By 海天游草~~~2017.4.1</p>
+        <h2 id="The-Question"><a href="#The-Question" class="headerlink" title="The Question"></a>The Question</h2><p>Given an m * n matrix M initialized with all 0’s and several update operations.<br><a id="more"></a></p>
+<p>Operations are represented by a 2D array, and each operation is represented by an array with two positive integers a and b, which means M[i][j] should be added by one for all 0 &lt;= i &lt; a and 0 &lt;= j &lt; b.</p>
+<p>You need to count and return the number of maximum integers in the matrix after performing all the operations.</p>
+<h2 id="The-Example"><a href="#The-Example" class="headerlink" title="The Example"></a>The Example</h2><blockquote>
+<p>Input:<br>m = 3, n = 3<br>operations = [[2,2],[3,3]]<br>Output: 4<br>Explanation:<br>Initially, M =<br>[[0, 0, 0],<br> [0, 0, 0],<br> [0, 0, 0]]</p>
+<p>After performing [2,2], M =<br>[[1, 1, 0],<br> [1, 1, 0],<br> [0, 0, 0]]</p>
+<p>After performing [3,3], M =<br>[[2, 2, 1],<br> [2, 2, 1],<br> [1, 1, 1]]</p>
+<h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p>比较简单，就是一个一个矩阵的堆叠，取值最大的位置就是小矩阵a和b最小的地方，数目就是a*b。</p>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxCount</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; ops)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> it=<span class="number">0</span>;it&lt;ops.size();++it)&#123;</div><div class="line">            m=min(ops[it][<span class="number">0</span>],m);</div><div class="line">            n=min(ops[it][<span class="number">1</span>],n);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> m*n;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int maxCount(int m, int n, vector&lt;vector&lt;int&gt;&gt;&amp; ops) &#123;</div><div class="line">        for (auto op : ops) &#123;</div><div class="line">            m = min(op[0], m);</div><div class="line">            n = min(op[1], n);</div><div class="line">        &#125;</div><div class="line">        return m * n;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>~Thanks~<br>By 海天游草~~~2017.6.3</p>
 
       
     </div>
@@ -408,7 +408,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/INT-MIN/" rel="tag"># INT_MIN</a>
+            <a href="/tags/DP/" rel="tag"># DP</a>
           
         </div>
       
@@ -421,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/28/Gas Station—2017.3.28/" rel="next" title="Gas Station">
-                <i class="fa fa-chevron-left"></i> Gas Station
+              <a href="/2017/06/01/Non-negative Integers without Consecutive Ones——2017.6.1/" rel="next" title="Non-negative Integers without Consecutive Ones">
+                <i class="fa fa-chevron-left"></i> Non-negative Integers without Consecutive Ones
               </a>
             
           </div>
@@ -430,10 +430,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/04/Jump Game—4.4/" rel="prev" title="Jump Game">
-                Jump Game <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -459,8 +455,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/"
-           data-title="Minimum Number of Arrows to Burst Balloons" data-url="http://yoursite.com/2017/04/01/Minimum Number of Arrows to Burst Balloons—2017.4.1/">
+      <div class="ds-thread" data-thread-key="2017/06/03/Range Addition II/"
+           data-title="Range Addition II" data-url="http://yoursite.com/2017/06/03/Range Addition II/">
       </div>
     
   </div>
@@ -562,7 +558,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">3.</span> <span class="nav-text">The Anwser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用INT-MIN的代码如下"><span class="nav-number">3.1.</span> <span class="nav-text">使用INT_MIN的代码如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己的代码"><span class="nav-number">3.2.</span> <span class="nav-text">自己的代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Question"><span class="nav-number">1.</span> <span class="nav-text">The Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Example"><span class="nav-number">2.</span> <span class="nav-text">The Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Anwser"><span class="nav-number">3.</span> <span class="nav-text">The Anwser</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下"><span class="nav-number">3.1.</span> <span class="nav-text">代码如下</span></a></li></ol></li></ol></div>
             
 
           </div>
