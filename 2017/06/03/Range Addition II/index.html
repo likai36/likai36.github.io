@@ -93,7 +93,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/03/Range Addition II/index.html">
 <meta property="og:site_name" content="海天中的一颗小游草">
 <meta property="og:description" content="The QuestionGiven an m * n matrix M initialized with all 0’s and several update operations.">
-<meta property="og:updated_time" content="2017-06-03T16:08:45.802Z">
+<meta property="og:updated_time" content="2017-06-03T16:10:58.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Range Addition II">
 <meta name="twitter:description" content="The QuestionGiven an m * n matrix M initialized with all 0’s and several update operations.">
@@ -380,9 +380,9 @@
 <p>Input:<br>m = 3, n = 3<br>operations = [[2,2],[3,3]]<br>Output: 4<br>Explanation:<br>Initially, M =<br>[[0, 0, 0],<br> [0, 0, 0],<br> [0, 0, 0]]</p>
 <p>After performing [2,2], M =<br>[[1, 1, 0],<br> [1, 1, 0],<br> [0, 0, 0]]</p>
 <p>After performing [3,3], M =<br>[[2, 2, 1],<br> [2, 2, 1],<br> [1, 1, 1]]</p>
+</blockquote>
 <h2 id="The-Anwser"><a href="#The-Anwser" class="headerlink" title="The Anwser"></a>The Anwser</h2><p>比较简单，就是一个一个矩阵的堆叠，取值最大的位置就是小矩阵a和b最小的地方，数目就是a*b。</p>
 <h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxCount</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; ops)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> it=<span class="number">0</span>;it&lt;ops.size();++it)&#123;</div><div class="line">            m=min(ops[it][<span class="number">0</span>],m);</div><div class="line">            n=min(ops[it][<span class="number">1</span>],n);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> m*n;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int maxCount(int m, int n, vector&lt;vector&lt;int&gt;&gt;&amp; ops) &#123;</div><div class="line">        for (auto op : ops) &#123;</div><div class="line">            m = min(op[0], m);</div><div class="line">            n = min(op[1], n);</div><div class="line">        &#125;</div><div class="line">        return m * n;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>~Thanks~<br>By 海天游草~~~2017.6.3</p>
 
