@@ -1,0 +1,777 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1000. 函数求值定义超级和函数F如下：F(0, n) = n，对于所有的正整数n..F(k, n) = F(k – 1, 1) + F(k – 1, 2) + … + F(k – 1, n)，对于所有的正整数k和n.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法机考模拟题">
+<meta property="og:url" content="http://yoursite.com/2017/06/23/算法机考模拟题/index.html">
+<meta property="og:site_name" content="海天中的一颗小游草">
+<meta property="og:description" content="1000. 函数求值定义超级和函数F如下：F(0, n) = n，对于所有的正整数n..F(k, n) = F(k – 1, 1) + F(k – 1, 2) + … + F(k – 1, n)，对于所有的正整数k和n.">
+<meta property="og:updated_time" content="2017-06-23T15:21:49.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法机考模拟题">
+<meta name="twitter:description" content="1000. 函数求值定义超级和函数F如下：F(0, n) = n，对于所有的正整数n..F(k, n) = F(k – 1, 1) + F(k – 1, 2) + … + F(k – 1, n)，对于所有的正整数k和n.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/23/算法机考模拟题/"/>
+
+
+
+
+
+  <title> 算法机考模拟题 | 海天中的一颗小游草 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">海天中的一颗小游草</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Computer Studying</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/算法机考模拟题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海天游草">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="海天中的一颗小游草">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法机考模拟题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T20:00:00+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法设计/" itemprop="url" rel="index">
+                    <span itemprop="name">算法设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/23/算法机考模拟题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/23/算法机考模拟题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1000-函数求值"><a href="#1000-函数求值" class="headerlink" title="1000. 函数求值"></a>1000. 函数求值</h2><p>定义超级和函数F如下：<br>F(0, n) = n，对于所有的正整数n..<br>F(k, n) = F(k – 1, 1) + F(k – 1, 2) + … + F(k – 1, n)，对于所有的正整数k和n.<br><a id="more"></a><br>请实现下面Solution类中计算F(k, n)的函数（1 &lt;= k, n &lt;= 14）.</p>
+<blockquote>
+<p>例1：F(1, 3) = 6<br>例2：F(2, 3) = 10<br>例3：F(10, 10) = 167960</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int F(int k, int n) &#123;</div><div class="line">        if(k==0)return n;</div><div class="line">        else&#123;</div><div class="line">            int result=0;</div><div class="line">            for(int i=1;i&lt;=n;++i)&#123;</div><div class="line">                result += F(k-1,i);</div><div class="line">            &#125;</div><div class="line">            return result;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="1001-会议安排"><a href="#1001-会议安排" class="headerlink" title="1001. 会议安排"></a>1001. 会议安排</h2><p>N个会议要同时举行，参会人数分别为A[0], A[1], …, A[N-1]. 现有M个会议室，会议室可容纳人数分别为B[0], B[1], …, B[M-1]. 当A[i]&lt;=B[j]时，可以把会议i安排在会议室j，每间会议室最多安排一个会议，每个会议最多只能安排一个会议室. 求最多安排多少个会议.</p>
+<p>1 &lt;= N, M &lt;= 100000, 每个会议的参会人数和每间会议室的容纳人数均在1和1000之间.</p>
+<p>请为下面的Solution类实现解决上述问题的函数assignConferenceRoom. 函数参数A和B的意义如上，返回值为最多可安排的会议数.</p>
+<blockquote>
+<p>例1：A={2, 3}, B={1, 2}，答案为1.<br>例2：A={3, 4, 5}，B={10, 3, 2}，答案为2.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int assignConferenceRoom(vector&lt;int&gt;&amp; A, vector&lt;int&gt;&amp; B) &#123;</div><div class="line">        sort(A.begin(),A.end());sort(B.begin(),B.end());</div><div class="line">        int number=0;int flag=0;</div><div class="line">        int len=B.size();</div><div class="line">        for(int i=0;i&lt;len;++i)&#123;</div><div class="line">            if(A[flag]&lt;=B[i])&#123;</div><div class="line">                ++flag;</div><div class="line">                ++number;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return number;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="1002-等价二叉树"><a href="#1002-等价二叉树" class="headerlink" title="1002. 等价二叉树"></a>1002. 等价二叉树</h2><p>两个二叉树结构相同，且对应结点的值相同，我们称这两个二叉树等价.</p>
+<p>例如：以下两个二叉树等价<br>        1           1<br>       /  \         /  \<br>      2   3       2   3<br>而以下两个则不等价<br>        1           1<br>       /  \         /  \<br>      2   3       3   2<br>以下两个也不等价<br>        1           1<br>       /  \         /  \<br>      2   3       2   2</p>
+<p>给出两个二叉树p和q，判断它们是否等价.</p>
+<p>p和q的结点数不多于100000，每个结点的数值在1和1000000000之间.</p>
+<p>请为下面的Solution类实现解决上述问题的isEqual函数，函数的两个参数p和q分别代表两个二叉树的根节点，如果以p和q为根的二叉树等价则函数返回true，否则返回false.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isEqual(TreeNode* p, TreeNode* q) &#123;</div><div class="line">        if(p==NULL &amp;&amp; q==NULL)return true;</div><div class="line">        if((p==NULL&amp;&amp;q!=NULL) || (p!=NULL&amp;&amp;q==NULL))return false;</div><div class="line">        else&#123;</div><div class="line">            if(p-&gt;val==q-&gt;val)return isEqual(p-&gt;left,q-&gt;left)&amp;&amp;isEqual(p-&gt;right,q-&gt;right);</div><div class="line">            else return false;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="1003-相连的1"><a href="#1003-相连的1" class="headerlink" title="1003. 相连的1"></a>1003. 相连的1</h2><p>对于一个01矩阵A，求其中有多少片连成一片的1. 每个1可以和上下左右的1相连.</p>
+<p>请为下面的Solution类实现解决这一问题的函数countConnectedOnes，函数参数A为给出的01矩阵，A的行数和列数均不大于1000. 函数的返回值是问题的答案.</p>
+<blockquote>
+<p>例1：A=<br>100<br>010<br>001<br><strong>答案为3.</strong><br>例2：A=<br>1101<br>0101<br>1110<br><strong>答案为2.</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int countConnectedOnes(vector&lt;vector&lt;char&gt; &gt;&amp; A) &#123;</div><div class="line">        int row = A.size(); int col = A[0].size();</div><div class="line">        if(!row||!col)return 0;</div><div class="line">        </div><div class="line">        vector&lt;vector&lt;bool&gt; &gt;flag(row,vector&lt;bool&gt;(col,0));</div><div class="line">        </div><div class="line">		int number = 0;</div><div class="line">        for (int i = 0; i&lt;row; ++i) &#123;</div><div class="line">            for (int j = 0; j&lt;col; ++j) &#123;</div><div class="line">            	if(A[i][j]==&apos;1&apos;&amp;&amp;flag[i][j]==0)&#123;</div><div class="line">            		++number;</div><div class="line">					search(A,flag,i,j);</div><div class="line">				&#125;</div><div class="line">            &#125;	</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        return number;</div><div class="line">    &#125;</div><div class="line">    int search(vector&lt;vector&lt;char&gt; &gt;&amp; A,vector&lt;vector&lt;bool&gt; &gt;&amp; flag,int i,int j)&#123;</div><div class="line">    	queue&lt;pair&lt;int,int&gt; &gt;q;</div><div class="line">    	q.push(make_pair(i,j));</div><div class="line">    	while(q.size())&#123;</div><div class="line">    		pair&lt;int,int&gt;p=q.front();q.pop();</div><div class="line">    		if(p.first-1&gt;=0 &amp;&amp; A[p.first-1][p.second]==&apos;1&apos;&amp;&amp; flag[p.first-1][p.second]==0)&#123;</div><div class="line">    			q.push(make_pair(p.first-1,p.second));</div><div class="line">    			flag[p.first-1][p.second]=1;</div><div class="line">    		&#125;</div><div class="line">			if(p.first+1&lt;A.size() &amp;&amp; A[p.first+1][p.second]==&apos;1&apos; &amp;&amp; flag[p.first+1][p.second]==0)&#123;</div><div class="line">				q.push(make_pair(p.first+1,p.second));</div><div class="line">    			flag[p.first+1][p.second]=1;</div><div class="line">			&#125;</div><div class="line">			if(p.second-1&gt;=0&amp;&amp;A[p.first][p.second-1]==&apos;1&apos;&amp;&amp; flag[p.first][p.second-1]==0)&#123;</div><div class="line">				q.push(make_pair(p.first,p.second-1));</div><div class="line">    			flag[p.first][p.second-1]=1;</div><div class="line">			&#125;</div><div class="line">			if(p.second+1&lt;A[0].size() &amp;&amp; A[p.first][p.second+1]==&apos;1&apos; &amp;&amp; flag[p.first][p.second+1]==0)&#123;</div><div class="line">				q.push(make_pair(p.first,p.second+1));</div><div class="line">    			flag[p.first][p.second+1]=1;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="1004-无环图"><a href="#1004-无环图" class="headerlink" title="1004. 无环图"></a>1004. 无环图</h2><p>在图论中，如果一个有向图从任意顶点出发无法经过若干条边回到该点，则这个图是一个有向无环图（Directed Acyclic Graph，DAG）. 对于一个n个节点的有向图（节点编号从0到n-1），请判断其是否为有向无环图.</p>
+<p>图的节点数和边数均不多于100000.</p>
+<p>请为下面的Solution类实现解决上述问题的isDAG函数，函数参数中n为图的节点数，edges是边集，edges[i]表示第i条边从edges[i].first指向edge[i].second. 如果是有向无环图返回true，否则返回false.</p>
+<blockquote>
+<p>例1：n = 3，edges = {(0, 1), (0, 2)}，函数应返回true.<br>例2：n = 2，edges = {(0, 1), (1, 0)}，函数应返回false.</p>
+</blockquote>
+<p><strong>路径的全局变量只定义一个就好！！！！！</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    bool isDAG(int n, vector&lt;pair&lt;int, int&gt; &gt;&amp; edges) &#123;</div><div class="line">        vector&lt;vector&lt;int&gt; &gt; graph(n);  </div><div class="line">        for (int i = 0; i &lt; edges.size(); i++)   </div><div class="line">            graph[edges[i].first].push_back(edges[i].second);  </div><div class="line">        </div><div class="line">        vector&lt;bool&gt; path(n,0); </div><div class="line">        for (int i = 0; i &lt; n; ++i) &#123;</div><div class="line">            if (explore(graph, i, path))</div><div class="line">                continue;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    bool explore(vector&lt;vector&lt;int&gt; &gt;&amp; graph,int point,vector&lt;bool&gt;&amp; path) &#123;</div><div class="line">        path[point]=1;</div><div class="line">        for (int i = 0; i &lt; graph[point].size(); ++i) &#123;</div><div class="line">            if (path[graph[point][i]])</div><div class="line">                return false;</div><div class="line">            explore(graph, graph[point][i],path);</div><div class="line">        &#125;</div><div class="line">        path[point] = 0;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="1005-最大和"><a href="#1005-最大和" class="headerlink" title="1005. 最大和"></a>1005. 最大和</h2><p>从数列A[0], A[1], A[2], …, A[N-1]中选若干个数，要求相邻的数不能都选，也就是说如果选了A[i], 就不能选A[i-1]和A[i+1]. 求能选出的最大和.</p>
+<p>1 &lt;= N &lt;= 100000, 1 &lt;= A[i] &lt;= 1000</p>
+<p>请为下面的Solution类实现解决上述问题的函数maxSum，函数参数A是给出的数列，返回值为所求的最大和.</p>
+<blockquote>
+<p>例1：A = {2, 5, 2}，答案为5.<br>例2：A = {2, 5, 4}，答案为6.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int maxSum(vector&lt;int&gt;&amp; A) &#123;</div><div class="line">        vector&lt;int&gt;dp(A.size(),0);</div><div class="line">        </div><div class="line">        if(A.size()==0)&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">        if(A.size()==1)&#123;</div><div class="line">            return A[0];</div><div class="line">        &#125;</div><div class="line">        dp[0]=A[0];</div><div class="line">        dp[1]=max(A[0],A[1]);</div><div class="line">        for(int i=2;i&lt;A.size();i++)&#123;</div><div class="line">            dp[i]=max(dp[i-1],dp[i-2]+A[i]);</div><div class="line">        &#125;</div><div class="line">        return dp[A.size()-1];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="1006-单词变换"><a href="#1006-单词变换" class="headerlink" title="1006. 单词变换"></a>1006. 单词变换</h2><p>对于两个只含有小写英文字母（’a’-‘z’）的单词word1和word2，你可以对word1进行以下3种操作：</p>
+<p>1） 插入一个字母；<br>2） 删除一个字母；<br>3） 替换一个字母.</p>
+<p>请计算将word1变换成word2的最少操作数.</p>
+<p>word1和word2的长度均不大于1000.</p>
+<p>请为下面的Solution类实现解决上述问题的函数minDistance，函数的参数word1和word2为给出的两个单词，返回值为所求最少操作数.</p>
+<blockquote>
+<p>例1：word1 = “sunny”, word2 = “snowy”，返回值为3.<br>例2：word1 = “abc”, word2 = “ac”，返回值为1.</p>
+</blockquote>
+<p>本来自己的想法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dis[i][j]=min(dis[i-1][j-1]+(word1[i-1]==word2[j-1])?0:1,min(dis[i-1][j],dis[i][j-1])+1);</div></pre></td></tr></table></figure></p>
+<p>但是一直不对，就修改了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">    int minDistance(string word1, string word2) &#123;</div><div class="line">        int m=word1.size();</div><div class="line">        int n=word2.size();</div><div class="line">        vector&lt;vector&lt;int&gt; &gt;dis(m+1,vector&lt;int&gt;(n+1,0));</div><div class="line">        for(int i=0;i&lt;=m;++i)</div><div class="line">            dis[i][0]=i;</div><div class="line">        for(int j=1;j&lt;=n;++j)</div><div class="line">            dis[0][j]=j;</div><div class="line">        for(int i=1;i&lt;=m;++i)&#123;</div><div class="line">            for(int j=1;j&lt;=n;++j)&#123;</div><div class="line">                if(word1[i-1]==word2[j-1])  </div><div class="line">                    dis[i][j]=dis[i-1][j-1];  </div><div class="line">                else&#123;  </div><div class="line">                    dis[i][j]=min(dis[i-1][j-1],min(dis[i][j-1],dis[i-1][j]))+1;  </div><div class="line">                &#125; </div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return dis[m][n];</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>数组，vector以索引方式使用必须声明大小才行。</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/20/nth_element/" rel="next" title="nth_element for sort">
+                <i class="fa fa-chevron-left"></i> nth_element for sort
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/06/23/算法机考模拟题/"
+           data-title="算法机考模拟题" data-url="http://yoursite.com/2017/06/23/算法机考模拟题/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="海天游草" />
+          <p class="site-author-name" itemprop="name">海天游草</p>
+           
+              <p class="site-description motion-element" itemprop="description">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1000-函数求值"><span class="nav-number">1.</span> <span class="nav-text">1000. 函数求值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1001-会议安排"><span class="nav-number">2.</span> <span class="nav-text">1001. 会议安排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1002-等价二叉树"><span class="nav-number">3.</span> <span class="nav-text">1002. 等价二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1003-相连的1"><span class="nav-number">4.</span> <span class="nav-text">1003. 相连的1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1004-无环图"><span class="nav-number">5.</span> <span class="nav-text">1004. 无环图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1005-最大和"><span class="nav-number">6.</span> <span class="nav-text">1005. 最大和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1006-单词变换"><span class="nav-number">7.</span> <span class="nav-text">1006. 单词变换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">海天游草</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"likai36"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
